@@ -24,11 +24,9 @@
 						<h1><a href="#">Integration continue </a></h1>
 						<nav class="links">
 							<ul>
-								<li><a href="#">Lorem</a></li>
-								<li><a href="#">Ipsum</a></li>
-								<li><a href="#">Feugiat</a></li>
-								<li><a href="#">Tempus</a></li>
-								<li><a href="#">Adipiscing</a></li>
+								<li><a href="index.html">Accueil</a></li>
+								<li><a href="page2.html">Travis</a></li>
+								<li><a href="page3.html">Déploiement</a></li>
 							</ul>
 						</nav>
 						<nav class="main">
@@ -102,22 +100,82 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#">L'intégration continue avec Travis </a></h2>
-										<p>Lorsque vous visitez des projets sur GitHub, 
+										<section id="intro">
+								<a href="#" class="logo"><img src="images/logo.jpg" alt="" /></a>
+								
+							</section>
+							          
+										<div id="travis"><h2><a href="#">Qu'est ce que Travis </a></h2></div>
+										Lorsque vous visitez des projets sur GitHub, 
 										vous avez certainement déjà apperçu des badges dans le README comme « build passing ».
-										Il s’agit d’un service proposé par Travis-CI.
-										Travis CI est un logiciel libre et un service en ligne utilisé pour compiler, tester et déployer le code source des logiciels développés, notamment en lien avec le service d'hébergement du code source GitHub. 
-										 </p>
+										Il s’agit d’un service proposé par<br/> Travis-CI.
+										Travis CI est un logiciel libre et un service en ligne utilisé pour compiler, tester et déployer le code source des logiciels développés, notamment en lien avec le<br/> service d'hébergement du code source GitHub. 
+										 
+										 
+										<br/><a href="#" class="image featured"><img src="images/travis-ci-process.png" alt="" /></a> 
+									
+									
+										<div id="config"><h2> Configuration de Travis pour l'intégration continue </h2></div>
+										
+										<ul>
+											<li ><b>Se connecter sur Travis avec les identifiants de Github.</b></li> 
+									
+											     Il est possible de se connecter sur Travis CI en passant par le site Github. Pour cela, il suffit de se connecter sur Github avec ses identifiants et dans une autre fenêtre,<br/> ouvrir Travis CI.
+											 
+										
+										
+										<li><b>Configurer les dépôts à "intégrer" de manière continue.</b>
+										</li>
+										En se connectant sur Travis avec les identifiants de GitHub, les projets ou dépôts se trouvant dans GitHub figurent aussi dans Travis. Pour les configurer à intégrer de <br/> manière continue, il suffit de cliquer sur l'icône " +" qui se trouve près de l'expression "My repositories". Une fois cliqué, dans la page qui apparait, mettre le dépôt ou <br/> projet voulu à valider.
+								
+										<li><b>Ajouter un fichier .travis.yml à la racine du dépôt.</b></li>
+										Il faut penser à l'ajouter avec git add.
+										
+										<li><b>Génération de la machine virtuelle.</b></li>
+										
+										Lors du git push (après un git commit bien sûr), Travis va générer une machine virtuelle qui va exécuter le script et indiquer un succès ( passing.svg ) si tout c’est bien <br/>passé.
+										</ul>
+										<a href="#" class="image featured"><img src="images/configTravis.png" alt=""/></a>
+										
+									<h2>Connecter Github et Travis</h2>
+									Pour ne pas avoir à préciser les mots de passe en clair dans vos scripts, il est possible d’indiquer les éléments de connexions de manière crypté. Ainsi il faut :
+									<ul>
+									<li><b>Associer un token à votre dépôt sous Github</b>(<font color="blue"><a  href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/ ">explication ici</a>)</font></li>
+									<li><b>Installer travis</b> </li>
+									gem install travis
+									<li><b>Crypter (et ajouter au fichier .travis.yml en même temps) votre token </b></li>
+									<b>travis encrypt MY_SECRET_ENV=super_secret --add env.matrix</b>
+									<br/>
+									Il est possible de valider la syntaxe du fichier .travis.yml en installant un utilitaire :<br/>
+									
+									<b>gem install travis-lint<br/>
+
+                                    travis-lint</b>
+									
+									</ul>
+									<h2> Quelques exemples de fichiers</h2>
+									<h3>Fichier Travis</h3>
+									Voici à quoi ressemble un fichier .travis.yml.<br/>
+									<a href="#" class="image featured"><img src="images/f1travis.png" alt=""/>
+									<img src="images/f2travis.png" alt=""/></a><br/><br/>
+									
+									<h3>Fichier de script lancé par Travis</h3>
+									C'est le fichier update-doc.sh.<br/>
+									<a href="#" class="image featured"><img src="images/fi3.png" alt=""/>
+									<img src="images/f4.png" alt=""/></a><br/><br/>
+									
+								     
+									  <ul class="actions">
+										<li><a href="integrationContinue(1).html" class="button big">Formation à Travis</a></li>
+									</ul>
 									</div>
-									<div class="meta">
-										<time class="published" datetime="2015-11-01">Mars 25, 2016</time>
-										<a href="#" class="author"><span class="name">Saindy NKADI</span><img src="images/Integration-continue.jpg" alt="" /></a>
-									</div>
+									
 								</header>
 								<footer>
-									<ul class="actions">
-										<li><a href="https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue" class="button big">formation à Git & Git Hub</a></li>
-									</ul>
+										 
+									    
+									
+									
 									<ul class="stats">
 										<li><a href="#">General</a></li>
 										<li><a href="#" class="icon fa-heart">28</a></li>
@@ -130,12 +188,13 @@
 						<!-- Pagination -->
 							<ul class="actions pagination">
 								<li><a href="index.html" class=" button big previous">Previous Page</a></li>
-								<li><a href="#" class=" disabled button big next">Next Page</a></li>
+								<li><a href="page3.html" class="button big next">Next Page</a></li>
 							</ul>
 
 					</div>
-
-				<!-- Sidebar -->
+					
+					
+					<!-- Sidebar -->
 					<section id="sidebar">
 
 						<!-- Intro -->
@@ -143,7 +202,7 @@
 								<a href="#" class="logo"><img src="images/logo.jpg" alt="" /></a>
 								<header>
 									<h2>Integration continue</h2>
-									<p>Another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+									
 								</header>
 							</section>
 
@@ -154,114 +213,82 @@
 									<!-- Mini Post -->
 										<article class="mini-post">
 											<header>
-												<h3><a href="#">Vitae sed condimentum</a></h3>
-												<time class="published" datetime="2015-10-20">October 20, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+												<h3><a href="index.html#Integration">Intégration continue en image</a></h3>
+											
+												<a href="index.html#Integration" class="author"><img src="images/avatar.jpg" alt="" /></a>
 											</header>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+											<a href="index.html#Integration" class="image"><img src="images/Integration-continue.jpg" alt="" /></a>
 										</article>
 
 									<!-- Mini Post -->
 										<article class="mini-post">
 											<header>
-												<h3><a href="#">Rutrum neque accumsan</a></h3>
-												<time class="published" datetime="2015-10-19">October 19, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+												<h3><a href="index.html#Formation à Git">Formation à Git</a></h3>
+												
+												<a href="index.html#Formation à Git" class="author"><img src="images/avatar.jpg" alt="" /></a>
 											</header>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
+											<a href="index.html#Formation à Git" class="image"><img src="images/git.jpg" alt="" /></a>
 										</article>
 
 									<!-- Mini Post -->
 										<article class="mini-post">
 											<header>
-												<h3><a href="#">Odio congue mattis</a></h3>
-												<time class="published" datetime="2015-10-18">October 18, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+												<h3><a href="index.html#Formation à Github">Formation à Github</a></h3>
+												
+												<a href="index.html#Formation à Github" class="author"><img src="images/avatar.jpg" alt="" /></a>
 											</header>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
+											<a href="index.html#Formation à Github" class="image"><img src="images/github.png" alt="" /></a>
 										</article>
 
 									<!-- Mini Post -->
 										<article class="mini-post">
 											<header>
-												<h3><a href="#">Enim nisl veroeros</a></h3>
-												<time class="published" datetime="2015-10-17">October 17, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+												<h3><a href="#travis" >Qu'est ce que Travis-CI</a></h3>
+												
+												<a href="#travis"  class="author"><img src="images/avatar.jpg" alt="" /></a>
 											</header>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+											<a href="#travis" class="image"><img src="images/travis-ci-process.png" alt="" /></a>
+										</article>
+										
+									<!-- Mini Post -->
+										<article class="mini-post">
+											<header>
+												<h3><a href="#config" >Configuration de Travis</a></h3>
+												
+												<a href="#config"  class="author"><img src="images/avatar.jpg" alt="" /></a>
+											</header>
+											<a href="#config" class="image"><img src="images/configTravis.png" alt="" /></a>
+										</article>
+										
+									<!-- Mini Post -->
+										<article class="mini-post">
+											<header>
+												<h3><a href="page3.html#intro" >Déploiement sur Github avec Travis</a></h3>
+												
+												<a href="page3.html#intro"  class="author"><img src="images/avatar.jpg" alt="" /></a>
+											</header>
+											<a href="page3.html#intro" class="image"><img src="images/f6.png" alt="" /></a>
 										</article>
 
 								</div>
 							</section>
 
-						<!-- Posts List -->
-							<section>
-								<ul class="posts">
-									<li>
-										<article>
-											<header>
-												<h3><a href="#">Lorem ipsum fermentum ut nisl vitae</a></h3>
-												<time class="published" datetime="2015-10-20">October 20, 2015</time>
-											</header>
-											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-										</article>
-									</li>
-									<li>
-										<article>
-											<header>
-												<h3><a href="#">Convallis maximus nisl mattis nunc id lorem</a></h3>
-												<time class="published" datetime="2015-10-15">October 15, 2015</time>
-											</header>
-											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-										</article>
-									</li>
-									<li>
-										<article>
-											<header>
-												<h3><a href="#">Euismod amet placerat vivamus porttitor</a></h3>
-												<time class="published" datetime="2015-10-10">October 10, 2015</time>
-											</header>
-											<a href="#" class="image"><img src="images/pic10.jpg" alt="" /></a>
-										</article>
-									</li>
-									<li>
-										<article>
-											<header>
-												<h3><a href="#">Magna enim accum</a></h3>
-												<time class="published" datetime="2015-10-08">October 8, 2015</time>
-											</header>
-											<a href="#" class="image"><img src="images/pic11.jpg" alt="" /></a>
-										</article>
-									</li>
-									<li>
-										<article>
-											<header>
-												<h3><a href="#">Congue ullam corper lorem ipsum dolor</a></h3>
-												<time class="published" datetime="2015-10-06">October 7, 2015</time>
-											</header>
-											<a href="#" class="image"><img src="images/pic12.jpg" alt="" /></a>
-										</article>
-									</li>
-								</ul>
-							</section>
+			
 
-						<!-- About -->
-							<section class="blurb">
-								<h2>About</h2>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
-								<ul class="actions">
-									<li><a href="#" class="button">Learn More</a></li>
-								</ul>
-							</section>
+						
 
 						<!-- Footer -->
 							<section id="footer">
+								<div class="meta">
+								
+										<a href="#" class="author"><span class="name">Saindy NKADI</span><br/><span>Mars 18, 2016</span></a>
+									</div>
 								<ul class="icons">
-									<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="https://twitter.com/?lang=fr" class="fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="https://www.facebook.com/" class="fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="https://www.instagram.com/" class="fa-instagram"><span class="label">Instagram</span></a></li>
 									<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
-									<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
+									<li><a href="https://www.google.com/intl/fr_fr/mail/help/about.html" class="fa-envelope"><span class="label">Email</span></a></li>
 								</ul>
 								<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
 							</section>
