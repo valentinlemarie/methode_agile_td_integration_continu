@@ -2,8 +2,8 @@
 
 ## 1. Objectif:
 
-L’objectif de ce projet est de créer un tutoriel qui explique comment développer une solution d’intégration continue qui
-génère ces pages sans que l’utilisateur ait quoi que ce soit à installer sur sa machine, en utilisant Travis CI, un outil d’intégration continue couplé  à GitHub. Au passage l’idée est de rajouter des aspects tests et vérifications.
+L’objectif de ce projet est de créer un guide qui va aider à faire de l’intégration continue en utilisant Travis en complément des dépôts github.
+
 
 ## 2. Lancement:
 
